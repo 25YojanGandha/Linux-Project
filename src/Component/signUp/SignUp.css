@@ -1,0 +1,111 @@
+.signUp-container{
+    height: 100vh;
+    width: 100vw;
+    background: url('../../../public/images/loginbg.png');
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+     
+.signUp{
+    min-height: 10rem;
+    width: 20rem;
+    /* border: 1px solid yellow; */
+    margin: 90px;
+    border-radius: 10px;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.274);
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.user-data{
+    display: flex;
+    flex-direction: row;
+    /* float: left; */
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+    font-weight: 500;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+}
+
+.user-data img{
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+
+.profile-icon{
+    margin-top: 0.5rem;
+    font-size: 4rem;
+    color: rgba(245, 243, 243, 0.801);
+    font-weight: 100;
+}
+
+/* .name{
+    color: rgba(245, 243, 243, 0.801);
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+} */
+
+.text{
+    color:rgba(196, 191, 191, 0.801);
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    padding: 0.3rem;
+}
+
+input{
+    outline: none;
+    height: 1.35rem;
+    width: 100%;
+    /* color: #CCC; */
+    border: 0px solid;
+    padding: 0.35rem;
+    border-radius: 0.3rem;
+    background-color: rgb(253, 253, 253);
+    /* border-bottom: 2px solid #CCC; */
+}
+
+.main-wrapper{
+    padding: 1rem;
+    height: 100%;
+    overflow: hidden;
+    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+}
+
+.wrapper{
+    padding: 1rem;
+}
+
+.utility{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.display{
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+button{
+    border-radius: 0.4rem;
+    border: 0px solid;
+    outline: none;
+    padding: 0.3rem;
+    font-weight: 600;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: rgba(29, 21, 21, 0.829);
+}

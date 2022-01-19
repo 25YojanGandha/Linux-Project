@@ -1,0 +1,17 @@
+#Body{
+ height: 100vh;
+ width: 100vw;
+ background-image: url(../../public/images/wall_2.jpeg);
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ display: flex;
+ flex-direction: row;
+ flex-wrap:wrap;
+}
+
+.gridContainer{
+ height: calc(100% - 1.4rem);
+ width: 100% ;
+ display: flex;
+}

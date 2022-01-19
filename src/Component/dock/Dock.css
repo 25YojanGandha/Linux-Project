@@ -1,0 +1,79 @@
+#dockBody{
+ height:100%;
+ min-width: 3.5rem;
+ background-color: #1103117a;
+}
+.dock-appRecent-container{
+ height: calc(100% - 3.5rem);
+ width: 100%;
+ display: flex;
+ padding-top:0.3rem;
+ padding-bottom:0.3rem;
+ flex-direction: column;
+align-items: center;
+/* gap: 0.2rem; */
+}
+
+.dock-appMenu-container{
+ height: 3.5rem;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.dock-appMenu-container span{
+ height: 85%;
+ width: 85%;
+ border-radius: 0.2rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.dock-appMenu-container span:hover{
+background-color: #64646d;
+}
+.dock-appMenu-container span *{
+color: white;
+font-size: 2.5rem;
+}
+
+.appContainer{
+ height: 3rem;
+ width: 88%;
+ border-radius: 0.3rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.appContainer:hover{
+  background-color: rgba(75, 64, 71, 0.719);
+}
+.appContainer img{
+height: 2.5rem;
+width: 2.5rem;
+}
+
+.dock-divider{
+ width: 70%;
+ border:0.01rem solid grey;
+ border-radius: 0.5rem;
+ margin-top: 0.5rem;
+ margin-bottom: 0.5rem;
+}
+
+.appContainer_2{
+ height: 4rem;
+ width: 90%;
+ border-radius:0.5rem;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.appContainer_2:hover{
+ background-color: rgba(75, 64, 71, 0.719);
+}
+.appContainer_2 img{
+ height: 90%;
+}
