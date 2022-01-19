@@ -1,8 +1,8 @@
 import "./Modal.css";
-import minimize from './images/minimize.png';
-import maximize from './images/maximize.png';
-import close from './images/close.png';
 import { useState, useEffect, createRef } from "react";
+import { IoCloseOutline } from 'react-icons/io5';
+import { MdFullscreen } from 'react-icons/md';
+import { BsDash } from 'react-icons/bs';
 
 function Modal(){
     // 0- Default State
@@ -30,33 +30,44 @@ function Modal(){
       }
     }, [cstate, modalContainer]);
 
-    return(
-        <div className="modal-container" ref={modalContainer}>
-            <div className="modal-title">
-                <div className="application-headline">Application</div>
+    return (
+      <div className='modal-container' ref={modalContainer}>
+        <div className='modal-title'>
+          <div className='application-headline'>Application</div>
 
-                <div className="controls">
-                    <span onClick={(cstate)=>{
-                        setState(cstate=1);
-                        // console.log(cstate,this);
-                    }}> <img src={minimize} alt="minimize"/> </span>
+          <div className='controls'>
+            <span
+              onClick={(cstate) => {
+                setState((cstate = 1));
+                // console.log(cstate,this);
+              }}
+            >
+              <BsDash />
+            </span>
 
-                    <span onClick={(cstate)=>{
-                        setState(cstate=2);
-                        // console.log(cstate);
-                    }}><img src={maximize} alt="maximize"/></span>
+            <span
+              className="fullscreenSpan"
+              onClick={(cstate) => {
+                setState((cstate = 2));
+              }}
+            >
+              <MdFullscreen />
+            </span>
 
-                    <span onClick={(cstate)=>{
-                        setState(cstate=3);
-                        // console.log(cstate);
-                    }}><img src={close} alt="close"/></span>
-                </div>
-            </div>
-
-            <div className="modal-base">
-
-            </div>
+            <span
+                className="closeSpan"
+              onClick={(cstate) => {
+                setState((cstate = 3));
+                // console.log(cstate);
+              }}
+            >
+              <IoCloseOutline />
+            </span>
+          </div>
         </div>
+
+        <div className='modal-base'></div>
+      </div>
     );
 }
 
