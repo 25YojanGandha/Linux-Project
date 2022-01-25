@@ -29,11 +29,11 @@
     flex-direction: row;
     border-bottom: 1px solid #585858;
     background: #2c2c2c;
-     position: relative;
-        border-radius: 0.4rem 0.4rem 0 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    position: relative;
+    border-radius: 0.4rem 0.4rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

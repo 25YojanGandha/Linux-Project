@@ -14,7 +14,7 @@ function Modal(props) {
   useEffect(() => {
     gData['is' + props.data.innerData] = {
       ...gData['is' + props.data.innerData],
-      windowModal: modalContainer,
+      windowModal: modalContainer
     }; 
   });
 
@@ -30,6 +30,7 @@ function Modal(props) {
         <div className='application-headline'>{props.data.innerData}</div>
 
         <div className='controls'>
+
           <span
             onClick={() => {
 
@@ -88,7 +89,9 @@ function Modal(props) {
           >
             <IoCloseOutline />
           </span>
+
         </div>
+
       </div>
 
       <div className='modal-base'></div>

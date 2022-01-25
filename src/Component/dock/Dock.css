@@ -3,6 +3,7 @@
  min-width: 3.5rem;
  background-color: #1103117a;
 }
+
 .dock-appRecent-container{
  height: calc(100% - 3.5rem);
  width: 100%;
@@ -30,9 +31,11 @@ align-items: center;
  justify-content: center;
  align-items: center;
 }
+
 .dock-appMenu-container span:hover{
 background-color: #64646d;
 }
+
 .dock-appMenu-container span *{
 color: white;
 font-size: 2.5rem;
@@ -51,6 +54,7 @@ font-size: 2.5rem;
 .appContainer:hover{
   background-color: rgba(75, 64, 71, 0.719);
 }
+
 .appContainer img{
 height: 2.5rem;
 width: 2.5rem;

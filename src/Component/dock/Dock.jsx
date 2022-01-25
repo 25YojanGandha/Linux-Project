@@ -13,16 +13,15 @@ function Dock() {
       });
       gData.setCurrentApp([currentClikedApp, ...newArr]);
     }
+
     if (!gData['is' + currentClikedApp].appOpend) {
       gData['set' + currentClikedApp]({
         ...gData['is' + currentClikedApp],
         appOpend: true,
       });
     }
-    if (
-      gData['is' + currentClikedApp].appOpend &&
-      gData.currentApp[0] === currentClikedApp
-    ) {
+
+    if (gData['is' + currentClikedApp].appOpend && gData.currentApp[0] === currentClikedApp) {
       gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
       gData['set' + currentClikedApp]({
         ...gData['is' + currentClikedApp],
@@ -33,6 +32,7 @@ function Dock() {
       });
       gData.setCurrentApp([...newArr]);
     }
+
     if (gData['is' + currentClikedApp].minimize) {
       gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
       gData['set' + currentClikedApp]({
@@ -45,80 +45,45 @@ function Dock() {
   return (
     <div id='dockBody'>
       <div className='dock-appRecent-container'>
-        {console.log(gData.currentApp)}
-        <div
+
+        {gData.dockIconArray.map((appName)=>{
+          return  <div
           className={
-            gData.currentApp[0] === 'Browser' &&
-            gData.isBrowser.appOpend &&
-            !gData.isBrowser.minimize
+            gData.currentApp[0] === appName &&
+            gData["is"+ appName].appOpend &&
+            !gData["is"+ appName].minimize
               ? 'appContainer currApp'
               : 'appContainer'
           }
           onClick={() => {
-            handleDock('Browser');
+            handleDock(appName);
           }}
         >
-          {gData.isBrowser.appOpend ? <div className='dot'></div> : ''}
-          <img src='./images/web-browser.png' alt='Browser' />
-        </div>
-        <div
-          className={
-            gData.currentApp[0] === 'Clock' &&
-            gData.isClock.appOpend &&
-            gData.isClock.minimize === false
-              ? 'appContainer currApp'
-              : 'appContainer'
-          }
-          onClick={() => {
-            handleDock('Clock');
-          }}
-        >
-          {gData.isClock.appOpend ? <div className='dot'></div> : ''}
-          <img src='./images/clock.png' alt='Browser' />
-        </div>
-        <div
-          className={
-            gData.currentApp[0] === 'Terminal' &&
-            gData.isTerminal.appOpend &&
-            gData.isTerminal.minimize === false
-              ? 'appContainer currApp'
-              : 'appContainer'
-          }
-          onClick={() => {
-            handleDock('Terminal');
-          }}
-        >
-          {gData.isTerminal.appOpend ? <div className='dot'></div> : ''}
-          <img src='./images/bash.png' alt='Browser' />
-        </div>
-        <div
-          className={
-            gData.currentApp[0] === 'Account' &&
-            gData.isAccount.appOpend &&
-            gData.isAccount.minimize === false
-              ? 'appContainer currApp'
-              : 'appContainer'
-          }
-          onClick={() => {
-            handleDock('Account');
-          }}
-        >
-          {gData.isAccount.appOpend ? <div className='dot'></div> : ''}
-          <img src='./images/account.png' alt='Browser' />
-        </div>
-        <div className='appContainer'>
-          <img src='./images/store.png' alt='Browser' />
-        </div>
-        <div className='appContainer'>
-          <img src='./images/help.png' alt='Browser' />
-        </div>
+          {gData["is"+ appName].appOpend ? <div className='dot'></div> : ''}
+          <img src={`./images/${appName}.png`} alt={appName} />
+        </div> ;
+        })}
 
         <div className='dock-divider'></div>
 
-        <div className='appContainer_2'>
-          <img src='./images/trash.png' alt='Browser' />
+        {/* TRASH */}
+        <div className={
+          gData.currentApp[0] === 'Trash' &&
+            gData.isTrash.appOpend &&
+            gData.isTrash.minimize === false
+            ? 'appContainer_2 currApp'
+            : 'appContainer_2'
+        }
+          onClick={() => {
+            handleDock('Trash');
+          }}
+        >
+          {gData.isTrash.appOpend ? <div className='dot'></div> : ''}
+          <img src='./images/trash.png' alt='Trash' />
         </div>
+
       </div>
+
       <div className='dock-appMenu-container'>
         <span>
           <CgMenuGridR />
@@ -129,3 +94,5 @@ function Dock() {
 }
 
 export default Dock;
+
+
