@@ -1,7 +1,7 @@
 #headerBar {
   height: 1.4rem;
   min-width: 100%;
-  background-color: #121212cc;
+  background-color: #1c1c1c;
   position: relative;
   display: flex;
   justify-content: center;
@@ -10,11 +10,12 @@
 .timer-headerBar {
   height: 100%;
   color: white;
-  font-family: sans-serif;
+  font-family: 'Ubuntu';
   font-size: 0.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .left-headerBar-container {
@@ -41,11 +42,12 @@
 .headerOptionText{
  height: 100%;
  color: white;
- font-family: sans-serif;
+ font-family: 'Ubuntu';
  font-size: 0.8rem;
   display: flex;
  justify-content: center;
  align-items: center;
+  cursor: pointer;
 }
 .right-headerBar-container {
   position: absolute;
@@ -62,6 +64,7 @@
 .right-headerBar-container * {
   color: white;
   font-size: 0.9rem;
+   cursor: pointer;
 }
 .right-headerBar-container:hover {
   background-color: #534d52;

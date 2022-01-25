@@ -1,8 +1,9 @@
 .BodyContainer{
  min-height: 100%;
- min-width: 100%;
+ min-width: calc(100% - 3.5rem);
  border: 2px solid rgb(229, 255, 0);
  display: flex;
+ position: relative;
  justify-content: center;
  align-items: center;
 }

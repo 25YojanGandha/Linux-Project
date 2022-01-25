@@ -5,28 +5,106 @@ import './Dock.css';
 
 function Dock() {
   let gData = useContext(GlobalData);
+
+  let handleDock = (currentClikedApp) => {
+    if (gData.currentApp[0] !== currentClikedApp) {
+      let newArr = gData.currentApp.filter((ele) => {
+        return ele !== currentClikedApp;
+      });
+      gData.setCurrentApp([currentClikedApp, ...newArr]);
+    }
+    if (!gData['is' + currentClikedApp].appOpend) {
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        appOpend: true,
+      });
+    }
+    if (
+      gData['is' + currentClikedApp].appOpend &&
+      gData.currentApp[0] === currentClikedApp
+    ) {
+      gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        minimize: true,
+      });
+      let newArr = gData.currentApp.filter((ele) => {
+        return ele !== currentClikedApp;
+      });
+      gData.setCurrentApp([...newArr]);
+    }
+    if (gData['is' + currentClikedApp].minimize) {
+      gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        minimize: false,
+      });
+    }
+  };
+
   return (
     <div id='dockBody'>
       <div className='dock-appRecent-container'>
+        {console.log(gData.currentApp)}
         <div
-          className='appContainer'
+          className={
+            gData.currentApp[0] === 'Browser' &&
+            gData.isBrowser.appOpend &&
+            !gData.isBrowser.minimize
+              ? 'appContainer currApp'
+              : 'appContainer'
+          }
           onClick={() => {
-            console.log('a');
-            // 0- Default State
-            // 1- Minimize
-            // 2- Maximize
-            // 3- Close
-            gData.setBrowser(0);
-            console.log(gData.isBrowser);
+            handleDock('Browser');
           }}
         >
+          {gData.isBrowser.appOpend ? <div className='dot'></div> : ''}
           <img src='./images/web-browser.png' alt='Browser' />
         </div>
-        <div className='appContainer'>
+        <div
+          className={
+            gData.currentApp[0] === 'Clock' &&
+            gData.isClock.appOpend &&
+            gData.isClock.minimize === false
+              ? 'appContainer currApp'
+              : 'appContainer'
+          }
+          onClick={() => {
+            handleDock('Clock');
+          }}
+        >
+          {gData.isClock.appOpend ? <div className='dot'></div> : ''}
           <img src='./images/clock.png' alt='Browser' />
         </div>
-        <div className='appContainer'>
+        <div
+          className={
+            gData.currentApp[0] === 'Terminal' &&
+            gData.isTerminal.appOpend &&
+            gData.isTerminal.minimize === false
+              ? 'appContainer currApp'
+              : 'appContainer'
+          }
+          onClick={() => {
+            handleDock('Terminal');
+          }}
+        >
+          {gData.isTerminal.appOpend ? <div className='dot'></div> : ''}
           <img src='./images/bash.png' alt='Browser' />
+        </div>
+        <div
+          className={
+            gData.currentApp[0] === 'Account' &&
+            gData.isAccount.appOpend &&
+            gData.isAccount.minimize === false
+              ? 'appContainer currApp'
+              : 'appContainer'
+          }
+          onClick={() => {
+            handleDock('Account');
+          }}
+        >
+          {gData.isAccount.appOpend ? <div className='dot'></div> : ''}
+          <img src='./images/account.png' alt='Browser' />
         </div>
         <div className='appContainer'>
           <img src='./images/store.png' alt='Browser' />
