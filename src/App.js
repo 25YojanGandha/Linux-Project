@@ -1,55 +1,57 @@
 import './App.css';
+import * as React from 'react';
 import { createContext, useState } from 'react';
 import Body from './Component/Body';
+// import { NextUIProvider } from '@nextui-org/react';
 
 export let GlobalData = createContext();
 
 function App() {
 
-  let [dockIconArray, setDockIconArray] = useState(['Browser', 'Clock', 'Terminal','Account','Appstore','Help']);
-  
+  let [dockIconArray, setDockIconArray] = useState(['Browser', 'Clock', 'Terminal', 'Account', 'Appstore', 'Help']);
+
   let [currentApp, setCurrentApp] = useState([]);
 
   let [isBrowser, setBrowser] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
 
   let [isClock, setClock] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
 
   let [isTerminal, setTerminal] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
-  
+
   let [isAccount, setAccount] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
 
   let [isAppstore, setAppstore] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
 
   let [isHelp, setHelp] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
 
   let [isTrash, setTrash] = useState({
     appOpend: false,
     minimize: false,
-    windowModal:''
+    windowModal: ''
   });
 
   let [isMenu, setMenu] = useState(false);
@@ -129,9 +131,13 @@ function App() {
         handleDockApp
       }}
     >
-      <div className='App'>
-        <Body />
-      </div>
+      {/* <NextUIProvider> */}
+        {/* {console.log(<NextUIProvider></NextUIProvider>)} */}
+        <div className='App'>
+          <Body />
+        </div>
+      {/* </NextUIProvider> */}
+
     </GlobalData.Provider>
   );
 }

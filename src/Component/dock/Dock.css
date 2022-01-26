@@ -55,6 +55,10 @@ font-size: 2.5rem;
   background-color: rgba(75, 64, 71, 0.719);
 }
 
+.menu-clicked{
+  background-color: #64646d;
+}
+
 .appContainer img{
 height: 2.5rem;
 width: 2.5rem;

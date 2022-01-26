@@ -51,9 +51,9 @@ function Dock() {
         </div>
 
       </div>
-
+      
       <div className='dock-appMenu-container' onClick={()=>{handleMenu()}}>
-        <span>
+        <span className={gData.isMenu ? 'menu-clicked' : ''}>
           <CgMenuGridR/>
         </span>
       </div>
