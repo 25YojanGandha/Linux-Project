@@ -27,10 +27,13 @@ function Dock() {
         ...gData['is' + currentClikedApp],
         minimize: true,
       });
+
       let newArr = gData.currentApp.filter((ele) => {
         return ele !== currentClikedApp;
       });
+
       gData.setCurrentApp([...newArr]);
+
     }
 
     if (gData['is' + currentClikedApp].minimize) {
@@ -40,12 +43,13 @@ function Dock() {
         minimize: false,
       });
     }
+    
   };
 
   return (
+
     <div id='dockBody'>
       <div className='dock-appRecent-container'>
-
         {gData.dockIconArray.map((appName)=>{
           return  <div
           className={
@@ -89,7 +93,9 @@ function Dock() {
           <CgMenuGridR />
         </span>
       </div>
+
     </div>
+    
   );
 }
 

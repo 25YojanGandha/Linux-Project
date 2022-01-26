@@ -23,22 +23,22 @@ function Modal(props) {
       className='modal-container'
       ref={modalContainer}
       style={
-        props.data.innerData === gData.currentApp[0] ? { zIndex: '100' } : { zIndex:'0'}
+        props.data.innerData === gData.currentApp[0]
+          ? { zIndex: '100' }
+          : { zIndex: '0' }
       }
     >
       <div className='modal-title'>
         <div className='application-headline'>{props.data.innerData}</div>
 
         <div className='controls'>
-
           <span
             onClick={() => {
-
               gData['set' + props.data.innerData]({
                 ...gData['is' + props.data.innerData],
                 minimize: true,
               });
-              
+
               gData[
                 'is' + props.data.innerData
               ].windowModal.current.style.display = 'none';
@@ -47,9 +47,7 @@ function Modal(props) {
                 return ele !== props.data.innerData;
               });
               gData.setCurrentApp([...newArr]);
-
             }}
-
           >
             <BsDash />
           </span>
@@ -81,20 +79,18 @@ function Modal(props) {
                 ...gData['is' + props.data.innerData],
                 appOpend: false,
               });
-                let newArr = gData.currentApp.filter((ele) => {
-                  return ele !== props.data.innerData;
-                });
-                gData.setCurrentApp([...newArr]);
+              let newArr = gData.currentApp.filter((ele) => {
+                return ele !== props.data.innerData;
+              });
+              gData.setCurrentApp([...newArr]);
             }}
           >
             <IoCloseOutline />
           </span>
-
         </div>
-
       </div>
 
-      <div className='modal-base'></div>
+      <div className='modal-base'>{props.data.component}</div>
     </div>
   );
 }

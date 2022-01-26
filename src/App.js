@@ -8,7 +8,7 @@ function App() {
 
   let [dockIconArray, setDockIconArray] = useState(['Browser', 'Clock', 'Terminal','Account','Appstore','Help']);
   let [currentApp, setCurrentApp] = useState([]);
-  
+
   let [isBrowser, setBrowser] = useState({
     appOpend: false,
     minimize: false,
@@ -80,6 +80,7 @@ function App() {
 
         isTrash,
         setTrash,
+
       }}
     >
       <div className='App'>
