@@ -6,49 +6,8 @@ import './Dock.css';
 function Dock() {
   let gData = useContext(GlobalData);
 
-<<<<<<< HEAD
-  let handleDock = (currentClikedApp) => {
-    if (gData.currentApp[0] !== currentClikedApp) {
-      let newArr = gData.currentApp.filter((ele) => {
-        return ele !== currentClikedApp;
-      });
-      gData.setCurrentApp([currentClikedApp, ...newArr]);
-    }
-
-    if (!gData['is' + currentClikedApp].appOpend) {
-      gData['set' + currentClikedApp]({
-        ...gData['is' + currentClikedApp],
-        appOpend: true,
-      });
-    }
-
-    if (gData['is' + currentClikedApp].appOpend && gData.currentApp[0] === currentClikedApp) {
-      gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
-      gData['set' + currentClikedApp]({
-        ...gData['is' + currentClikedApp],
-        minimize: true,
-      });
-
-      let newArr = gData.currentApp.filter((ele) => {
-        return ele !== currentClikedApp;
-      });
-
-      gData.setCurrentApp([...newArr]);
-
-    }
-
-    if (gData['is' + currentClikedApp].minimize) {
-      gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
-      gData['set' + currentClikedApp]({
-        ...gData['is' + currentClikedApp],
-        minimize: false,
-      });
-    }
-    
-=======
   let handleMenu = () => {
-    gData.isMenu == false ? gData.setMenu(true) : gData.setMenu(false);
->>>>>>> 3ada6afaedb0c86461f3ce97da140321d21e0c5c
+    gData.isMenu === false ? gData.setMenu(true) : gData.setMenu(false);
   };
 
   return (
