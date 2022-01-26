@@ -18,6 +18,42 @@ function Modal(props) {
     }; 
   });
 
+  function dragAndDrop(div){
+    // console.log(div);
+    // div.onmousedown = function(event) {
+
+    //     let shiftX = event.clientX - div.getBoundingClientRect().left;
+    //     let shiftY = event.clientY - div.getBoundingClientRect().top;
+      
+    //     div.style.position = 'absolute';
+    //     div.style.zIndex = 1000;
+    //     // document.body.append(div);
+      
+    //     moveAt(event.pageX, event.pageY);
+      
+    //     // moves the div at (pageX, pageY) coordinates
+    //     // taking initial shifts into account
+    //     function moveAt(pageX, pageY) {
+    //       div.style.left = pageX - shiftX + 'px';
+    //       div.style.top = pageY - shiftY + 'px';
+    //     }
+      
+    //     function onMouseMove(event) {
+    //       moveAt(event.pageX, event.pageY);
+    //     }
+      
+    //     // move the div on mousemove
+    //     // document.addEventListener('mousemove', onMouseMove);
+      
+    //     // drop the div, remove unneeded handlers
+    //     div.onmouseup = function() {
+    //       document.removeEventListener('mousemove', onMouseMove);
+    //       div.onmouseup = null;
+    //     };
+      
+      // };
+  }
+
   return (
     <div
       className='modal-container'
@@ -26,7 +62,7 @@ function Modal(props) {
         props.data.innerData === gData.currentApp[0] ? { zIndex: '100' } : { zIndex:'0'}
       }
     >
-      <div className='modal-title'>
+      <div className='modal-title' onClick={dragAndDrop(modalContainer)}>
         <div className='application-headline'>{props.data.innerData}</div>
 
         <div className='controls'>

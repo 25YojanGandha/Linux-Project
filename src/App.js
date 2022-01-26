@@ -51,6 +51,8 @@ function App() {
     windowModal:''
   });
 
+  let [isMenu, setMenu] = useState(false);
+
   return (
     <GlobalData.Provider
       value={{
@@ -80,6 +82,9 @@ function App() {
 
         isTrash,
         setTrash,
+
+        isMenu,
+        setMenu
       }}
     >
       <div className='App'>

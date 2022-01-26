@@ -6,12 +6,15 @@ import './Dock.css';
 function Dock() {
   let gData = useContext(GlobalData);
 
-  let handleDock = (currentClikedApp) => {
-    if (gData.currentApp[0] !== currentClikedApp) {
+  let handleDockApp = (currentClikedApp) => {
+
+    if (gData.currentApp==undefined || gData.currentApp[0] !== currentClikedApp) {
       let newArr = gData.currentApp.filter((ele) => {
         return ele !== currentClikedApp;
       });
       gData.setCurrentApp([currentClikedApp, ...newArr]);
+
+      console.log(gData.currentApp);
     }
 
     if (!gData['is' + currentClikedApp].appOpend) {
@@ -40,6 +43,11 @@ function Dock() {
         minimize: false,
       });
     }
+
+  };
+
+  let handleMenu = () => {
+
   };
 
   return (
@@ -56,7 +64,7 @@ function Dock() {
               : 'appContainer'
           }
           onClick={() => {
-            handleDock(appName);
+            handleDockApp(appName);
           }}
         >
           {gData["is"+ appName].appOpend ? <div className='dot'></div> : ''}
@@ -75,7 +83,7 @@ function Dock() {
             : 'appContainer_2'
         }
           onClick={() => {
-            handleDock('Trash');
+            handleDockApp('Trash');
           }}
         >
           {gData.isTrash.appOpend ? <div className='dot'></div> : ''}
@@ -94,5 +102,3 @@ function Dock() {
 }
 
 export default Dock;
-
-
