@@ -6,6 +6,7 @@ import './Dock.css';
 function Dock() {
   let gData = useContext(GlobalData);
 
+<<<<<<< HEAD
   let handleDock = (currentClikedApp) => {
     if (gData.currentApp[0] !== currentClikedApp) {
       let newArr = gData.currentApp.filter((ele) => {
@@ -44,6 +45,10 @@ function Dock() {
       });
     }
     
+=======
+  let handleMenu = () => {
+    gData.isMenu == false ? gData.setMenu(true) : gData.setMenu(false);
+>>>>>>> 3ada6afaedb0c86461f3ce97da140321d21e0c5c
   };
 
   return (
@@ -60,7 +65,7 @@ function Dock() {
               : 'appContainer'
           }
           onClick={() => {
-            handleDock(appName);
+            gData.handleDockApp(appName, gData);
           }}
         >
           {gData["is"+ appName].appOpend ? <div className='dot'></div> : ''}
@@ -79,7 +84,7 @@ function Dock() {
             : 'appContainer_2'
         }
           onClick={() => {
-            handleDock('Trash');
+            gData.handleDockApp('Trash', gData);
           }}
         >
           {gData.isTrash.appOpend ? <div className='dot'></div> : ''}
@@ -88,9 +93,9 @@ function Dock() {
 
       </div>
 
-      <div className='dock-appMenu-container'>
+      <div className='dock-appMenu-container' onClick={()=>{handleMenu()}}>
         <span>
-          <CgMenuGridR />
+          <CgMenuGridR/>
         </span>
       </div>
 
@@ -100,5 +105,3 @@ function Dock() {
 }
 
 export default Dock;
-
-

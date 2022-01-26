@@ -51,6 +51,49 @@ function App() {
     windowModal:''
   });
 
+  let [isMenu, setMenu] = useState(false);
+
+  let handleDockApp = (currentClikedApp, gData) => {
+    gData.setMenu(false);
+
+    if (gData.currentApp==undefined || gData.currentApp[0] !== currentClikedApp) {
+      let newArr = gData.currentApp.filter((ele) => {
+        return ele !== currentClikedApp;
+      });
+      gData.setCurrentApp([currentClikedApp, ...newArr]);
+
+      console.log(gData.currentApp);
+    }
+
+    if (!gData['is' + currentClikedApp].appOpend) {
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        appOpend: true,
+      });
+    }
+
+    if (gData['is' + currentClikedApp].appOpend && gData.currentApp[0] === currentClikedApp) {
+      gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        minimize: true,
+      });
+      let newArr = gData.currentApp.filter((ele) => {
+        return ele !== currentClikedApp;
+      });
+      gData.setCurrentApp([...newArr]);
+    }
+
+    if (gData['is' + currentClikedApp].minimize) {
+      gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        minimize: false,
+      });
+    }
+
+  };
+
   return (
     <GlobalData.Provider
       value={{
@@ -81,6 +124,13 @@ function App() {
         isTrash,
         setTrash,
 
+<<<<<<< HEAD
+=======
+        isMenu,
+        setMenu,
+
+        handleDockApp
+>>>>>>> 3ada6afaedb0c86461f3ce97da140321d21e0c5c
       }}
     >
       <div className='App'>
