@@ -1,7 +1,9 @@
 .menu-main-container{
     position: absolute;
-    height: 90%;
-    width: 70%;
-    left: 0px;
+    height: 100%;
+    width: 100%;
+    bottom: 0px;
     right: 0px;
+    background-color: rgba(7, 7, 7, 0.568);
+    z-index: 101;
 }

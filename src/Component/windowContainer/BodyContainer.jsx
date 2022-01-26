@@ -2,7 +2,8 @@ import { useContext } from 'react';
 import { GlobalData } from '../../App';
 import './BodyContainer.css';
 import Modal from '../windowModal/Modal';
-import 
+import Menu from '../menu/Menu';
+// import 
 
 function BodyContainer() {
   let gData = useContext(GlobalData);
@@ -17,7 +18,7 @@ function BodyContainer() {
       {gData.isTrash.appOpend ? <Modal data={{ innerData: 'Trash' }} /> : ''}
 
       {/* MENU BAR */}
-      {gData.isMenu ? <Modal data={{ innerData: 'Trash' }} /> : ''}
+      {gData.isMenu ? <Menu/> : ''}
 
     </div>
   );

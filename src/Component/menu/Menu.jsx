@@ -6,7 +6,14 @@ function Menu(){
     let gData = useContext(GlobalData);
 
     return(
-        <div className='menu-main-container'></div>
+        <div className='menu-main-container'>
+            <div className='menu-search-bar'>
+                <input type="text" />
+            </div>
+            <div className='menu-app-container'>
+                
+            </div>
+        </div>
     );
 }
 

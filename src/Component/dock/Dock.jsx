@@ -6,48 +6,8 @@ import './Dock.css';
 function Dock() {
   let gData = useContext(GlobalData);
 
-  let handleDockApp = (currentClikedApp) => {
-
-    if (gData.currentApp==undefined || gData.currentApp[0] !== currentClikedApp) {
-      let newArr = gData.currentApp.filter((ele) => {
-        return ele !== currentClikedApp;
-      });
-      gData.setCurrentApp([currentClikedApp, ...newArr]);
-
-      console.log(gData.currentApp);
-    }
-
-    if (!gData['is' + currentClikedApp].appOpend) {
-      gData['set' + currentClikedApp]({
-        ...gData['is' + currentClikedApp],
-        appOpend: true,
-      });
-    }
-
-    if (gData['is' + currentClikedApp].appOpend && gData.currentApp[0] === currentClikedApp) {
-      gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
-      gData['set' + currentClikedApp]({
-        ...gData['is' + currentClikedApp],
-        minimize: true,
-      });
-      let newArr = gData.currentApp.filter((ele) => {
-        return ele !== currentClikedApp;
-      });
-      gData.setCurrentApp([...newArr]);
-    }
-
-    if (gData['is' + currentClikedApp].minimize) {
-      gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
-      gData['set' + currentClikedApp]({
-        ...gData['is' + currentClikedApp],
-        minimize: false,
-      });
-    }
-
-  };
-
   let handleMenu = () => {
-
+    gData.isMenu == false ? gData.setMenu(true) : gData.setMenu(false);
   };
 
   return (
@@ -64,7 +24,7 @@ function Dock() {
               : 'appContainer'
           }
           onClick={() => {
-            handleDockApp(appName);
+            gData.handleDockApp(appName, gData);
           }}
         >
           {gData["is"+ appName].appOpend ? <div className='dot'></div> : ''}
@@ -83,7 +43,7 @@ function Dock() {
             : 'appContainer_2'
         }
           onClick={() => {
-            handleDockApp('Trash');
+            gData.handleDockApp('Trash', gData);
           }}
         >
           {gData.isTrash.appOpend ? <div className='dot'></div> : ''}
@@ -92,9 +52,9 @@ function Dock() {
 
       </div>
 
-      <div className='dock-appMenu-container'>
+      <div className='dock-appMenu-container' onClick={()=>{handleMenu()}}>
         <span>
-          <CgMenuGridR />
+          <CgMenuGridR/>
         </span>
       </div>
     </div>
