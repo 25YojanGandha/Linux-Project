@@ -124,13 +124,11 @@ function App() {
         isTrash,
         setTrash,
 
-<<<<<<< HEAD
-=======
         isMenu,
         setMenu,
 
         handleDockApp
->>>>>>> 3ada6afaedb0c86461f3ce97da140321d21e0c5c
+
       }}
     >
       <div className='App'>

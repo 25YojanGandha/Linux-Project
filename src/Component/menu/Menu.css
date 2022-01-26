@@ -7,3 +7,18 @@
     background-color: rgba(7, 7, 7, 0.568);
     z-index: 101;
 }
+
+.menu-app-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-container-card{
+    height: 4rem;
+    width: 90%;
+    border-radius:0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
