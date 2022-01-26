@@ -4,21 +4,32 @@
     width: 100%;
     bottom: 0px;
     right: 0px;
-    background-color: rgba(7, 7, 7, 0.568);
+    background-color: rgba(7, 7, 7, 0.493);
+    backdrop-filter: blur(1.3rem);
     z-index: 101;
+    padding: 1rem;
 }
 
 .menu-app-container{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .app-container-card{
-    height: 4rem;
-    width: 90%;
+    min-height: 5rem;
+    min-width: 5rem;
     border-radius:0.5rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    border: 2px solid yellow;
+    margin: 0.5rem;
+}
+
+.app-container-card img{
+    height: 2.5rem;
+    width: 2.5rem;
 }

@@ -7,6 +7,7 @@ export let GlobalData = createContext();
 function App() {
 
   let [dockIconArray, setDockIconArray] = useState(['Browser', 'Clock', 'Terminal','Account','Appstore','Help']);
+  
   let [currentApp, setCurrentApp] = useState([]);
 
   let [isBrowser, setBrowser] = useState({
@@ -56,13 +57,11 @@ function App() {
   let handleDockApp = (currentClikedApp, gData) => {
     gData.setMenu(false);
 
-    if (gData.currentApp==undefined || gData.currentApp[0] !== currentClikedApp) {
+    if (gData.currentApp[0] !== currentClikedApp) {
       let newArr = gData.currentApp.filter((ele) => {
         return ele !== currentClikedApp;
       });
       gData.setCurrentApp([currentClikedApp, ...newArr]);
-
-      console.log(gData.currentApp);
     }
 
     if (!gData['is' + currentClikedApp].appOpend) {
@@ -128,7 +127,6 @@ function App() {
         setMenu,
 
         handleDockApp
-
       }}
     >
       <div className='App'>
