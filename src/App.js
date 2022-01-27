@@ -8,13 +8,14 @@ export let GlobalData = createContext();
 
 function App() {
 
-  let [dockIconArray, setDockIconArray] = useState(['Browser', 'Clock', 'Terminal', 'Account', 'Appstore', 'Help']);
+  let [dockIconArray, setDockIconArray] = useState(['Browser', 'Terminal', 'Account', 'Appstore', 'Help']);
 
   let [currentApp, setCurrentApp] = useState([]);
 
   let [isBrowser, setBrowser] = useState({
     appOpend: false,
     minimize: false,
+    isPermanent: true,
     windowModal: ''
   });
 
@@ -27,28 +28,110 @@ function App() {
   let [isTerminal, setTerminal] = useState({
     appOpend: false,
     minimize: false,
+    isPermanent: true,
     windowModal: ''
   });
 
   let [isAccount, setAccount] = useState({
     appOpend: false,
     minimize: false,
+    isPermanent: true,
     windowModal: ''
   });
 
   let [isAppstore, setAppstore] = useState({
     appOpend: false,
     minimize: false,
+    isPermanent: true,
     windowModal: ''
   });
 
   let [isHelp, setHelp] = useState({
     appOpend: false,
     minimize: false,
+    isPermanent: true,
     windowModal: ''
   });
 
   let [isTrash, setTrash] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isMessage, setMessage] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isMusic, setMusic] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isWeather, setWeather] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isHillclimb, setHillclimb] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isMaps, setMaps] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isCalender, setCalender] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isVscode, setVscode] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isChess, setChess] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isNotepad, setNotepad] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isMeet, setMeet] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isSettings, setSettings] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isCamera, setCamera] = useState({
+    appOpend: false,
+    minimize: false,
+    windowModal: ''
+  });
+
+  let [isGallery, setGallery] = useState({
     appOpend: false,
     minimize: false,
     windowModal: ''
@@ -93,6 +176,10 @@ function App() {
       });
     }
 
+    if(!gData.dockIconArray.includes(currentClikedApp))
+    gData.dockIconArray = [...gData.dockIconArray, currentClikedApp];
+
+    gData.setDockIconArray(gData.dockIconArray);
   };
 
   return (
@@ -127,6 +214,45 @@ function App() {
 
         isMenu,
         setMenu,
+
+        isGallery,
+        setGallery,
+
+        isCamera,
+        setCamera,
+
+        isSettings,
+        setSettings,
+
+        isMeet,
+        setMeet,
+
+        isNotepad,
+        setNotepad,
+
+        isChess,
+        setChess,
+
+        isVscode,
+        setVscode,
+
+        isCalender,
+        setCalender,
+
+        isMaps,
+        setMaps,
+
+        isHillclimb,
+        setHillclimb,
+
+        isWeather,
+        setWeather,
+
+        isMusic,
+        setMusic,
+
+        isMessage,
+        setMessage,
 
         handleDockApp
       }}

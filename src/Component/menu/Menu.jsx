@@ -16,14 +16,13 @@ function Menu() {
     'Help',
     'Settings',
     'Meet',
-    'Clock',
     'Notepad',
     'Chess',
     'Vscode',
     'Calender',
     'Maps',
     'Hillclimb',
-    'trash',
+    'Trash',
     'Weather',
     'Music',
     'Message',
@@ -33,7 +32,7 @@ function Menu() {
     <div className='menu-main-container'>
       <div className='menu-search-bar'>
         <div className='inputContainer'>
-          <svg xmlns='http://www.w3.org/2000/svg' height='16' width='16'>
+          {/* <svg xmlns='http://www.w3.org/2000/svg' height='16' width='16'>
             <path
               d='M7 1C3.69 1 1 3.69 1 7s2.69 6 6 6a5.948 5.948 0 0 0 3.664-1.273l2.863 2.863 1.063-1.063-2.863-2.863A5.949 5.949 0 0 0 13 7c0-3.31-2.69-6-6-6zm0 1a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5z'
               className='searchIcon'
@@ -44,7 +43,7 @@ function Menu() {
               overflow='visible'
               fill='gray'
             />
-          </svg>
+          </svg> */}
           <input placeholder='Type To Search' type='text' />
         </div>
       </div>
@@ -52,7 +51,7 @@ function Menu() {
       <div className='menu-app-container'>
         {applicationsArray.map((appName) => {
           return (
-            <div className='app-container-card'>
+            <div className='app-container-card' onClick={()=>{gData.handleDockApp(appName,gData)}}>
               <img src={`./images/${appName}.png`} alt={appName} />
               <div className='app-text'>{appName}</div>
             </div>
