@@ -1,7 +1,9 @@
 import './Map.css';
 import React from 'react';
-import PlacesAutocomplete, {geocodeByAddress,getLatLng} from 'react-places-autocomplete';
-import GoogleMap from './GoogleMap';
+import MapApp from './MapApp';
+
+// import PlacesAutocomplete, {geocodeByAddress,getLatLng} from 'react-places-autocomplete';
+// import GoogleMap from './GoogleMap';
  
 // class LocationSearchInput extends React.Component {
 //   constructor(props) {
@@ -65,7 +67,9 @@ import GoogleMap from './GoogleMap';
 // }
 
 function Map() {
-    return <GoogleMap/>
+    return <div className='map-container'>
+        <MapApp/>
+    </div>
 }
 
 export default Map;
