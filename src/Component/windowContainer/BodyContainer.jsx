@@ -3,7 +3,7 @@ import { GlobalData } from '../../App';
 import './BodyContainer.css';
 import Modal from '../windowModal/Modal';
 import Menu from '../menu/Menu';
-// import 
+import Map from '../map/Map';
 
 function BodyContainer() {
   let gData = useContext(GlobalData);
@@ -27,7 +27,7 @@ function BodyContainer() {
       {gData.isChess.appOpend ? <Modal data={{ innerData: 'Chess' }} /> : ''}
       {gData.isVscode.appOpend ? <Modal data={{ innerData: 'Vscode' }} /> : ''}
       {gData.isCalender.appOpend ? <Modal data={{ innerData: 'Calender' }} /> : ''}
-      {gData.isMaps.appOpend ? <Modal data={{ innerData: 'Maps' }} /> : ''}
+      {gData.isMaps.appOpend ? <Modal data={{ innerData: 'Maps' , component: <Map/>}} /> : ''}
       {gData.isHillclimb.appOpend ? <Modal data={{ innerData: 'Hillclimb' }} /> : ''}
       {gData.isWeather.appOpend ? <Modal data={{ innerData: 'Weather' }} /> : ''}
       {gData.isMusic.appOpend ? <Modal data={{ innerData: 'Music' }} /> : ''}
