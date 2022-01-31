@@ -1,0 +1,13 @@
+.AppStoreBody{
+ height: 100%;
+ width: 100%;
+}
+
+.appBody-banner{
+ height: 25%;
+ width: 100%;
+ background-image: url(../../../public/images/Desktop\ -\ 3.png);
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}

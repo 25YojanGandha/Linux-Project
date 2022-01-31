@@ -1,25 +1,171 @@
-.AccountMain-Container{
- height: 100%;
- width: 100%;
- background-color: #0000007e;
- background-image: url(../../../public/images/wall_6.jpg);
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- display: flex;
- justify-content: center;
- align-items: center;
-
+.AccountMain-Container {
+  height: 100%;
+  width: 100%;
+  background-color: #2c011f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.loginBox{
- height: 80%;
- width: 25rem;
- border-radius: 0.5rem;
- background-color: #00000071;
- /* background-image: url(../../../public/images/wall_5.jpg); */
- background-position: center;
- background-repeat: no-repeat;
- background-size: cover;
- /* box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(255, 255, 255, 0.05) 0px 1px 1px 0px; */
+.loginBox {
+  width: 20rem;
+  border-radius: 0.5rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* border: 2px solid yellow; */
+  display: flex;
+  flex-direction: column;
+}
+
+.AccountName_logo_user_name {
+  /* border: 2px solid rgb(85, 85, 85); */
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.accountLogo {
+  height: 100%;
+  width: 5rem;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.userName {
+  height: 60%;
+  /* width: calc(100% - 6rem); */
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* border: 2px solid red; */
+}
+.accountLogo > * {
+  font-size: 8rem;
+  color: whitesmoke;
+}
+.userName > * {
+  position: absolute;
+  top: -0.3rem;
+  right: -1rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  cursor: pointer;
+}
+.passwordContainer {
+  height: 5rem;
+  padding-left: 8px;
+  width: 100%;
+  padding-left: 0.7rem;
+  /* margin-top: 0.3rem; */
+  margin-bottom: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  /* border: 2px solid red; */
+}
+
+.passwordText {
+  height: 2rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: 'Ubuntu';
+  color: #c2c1ca;
+  display: flex;
+  align-items: center;
+}
+
+
+.inputContainer {
+  height: calc(100% - 2.5rem);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #272727;
+  border-radius: 0.3rem;
+  border: 3px solid #333031;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.inputContainer input {
+  color: whitesmoke;
+  outline: none;
+  height: 100%;
+  width: 85%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-family: 'Ubuntu';
+  padding: 0.5rem;
+  background-color: transparent;
+}
+.inputContainerIconDiv {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputContainerIconDiv *{
+   color: #1db954;
+  font-size: 1.2rem;
+  cursor: pointer;
+  
+}
+
+.showPass *{
+  color: gray;
+   font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.buttonContainer {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.7rem;
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid lightblue; */
+}
+.buttonLogin {
+  height: 1.8rem;
+  width: 5.5rem;
+  background-color: #3f3e39;
+  border-radius: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  font-size: 1rem;
+  font-family: 'Ubuntu';
+  color: #c2c1ca;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.loginAdminText {
+  height: 2rem;
+  width: 100%;
+  padding-left: 0.7rem;
+  font-size: 1rem;
+  font-family: 'Ubuntu';
+  color: #c2c1ca;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.newAccount {
+  width: 8.5rem;
 }

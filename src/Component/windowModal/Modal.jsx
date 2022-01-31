@@ -126,7 +126,9 @@ function Modal(props) {
         </div>
       </div>
 
-      <div className='modal-base'>{props.data.component}</div>
+      <div className='modal-base'>
+        {props.data.component}
+      </div>
     </div>
   );
 }

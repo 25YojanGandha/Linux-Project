@@ -1,0 +1,153 @@
+.newAccountBody {
+  height: 100%;
+  width: 100%;
+  background-color: #f7f7f7;
+}
+
+.whoAreYouText {
+  height: 4rem;
+  width: 100%;
+  border-bottom: 2px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  padding-left: 1.5rem;
+  font-size: 1.5rem;
+  color: #655a4e;
+}
+
+.newAccountContentArea {
+  height: calc(100% - 10rem);
+  width: 100%;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.newAcocunt-contentLeft {
+  height: 100%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  gap: 0.8em;
+  /* justify-content: center; */
+}
+.newAcocunt-contentRight {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  gap: 0.8rem;
+}
+.n-a-input-container {
+  height: 2.3rem;
+  display: flex;
+  /* justify-content: center; */
+  /* padding-left: 0.3rem; */
+  color: white;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.n-a-yourName {
+  width: 60%;
+}
+.n-a-computerName {
+  width: 35%;
+}
+.n-a-pickUserName {
+  width: 28%;
+}
+.n-a-password {
+  width: 38%;
+}
+.n-a-input-container input {
+  padding: 0.3rem;
+  outline: none;
+  border: none;
+  border: 2px solid #e7e7e7;
+  border-radius: 0.3rem;
+  height: 100%;
+  width: 90%;
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  font-size: 1rem;
+}
+.n-a-iconContainer {
+  height: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.n-a-iconContainer * {
+  color: #1db954;
+  font-size: 1.1rem;
+}
+.n-a-text-container {
+  height: 2.3rem;
+  width: 100%;
+  color: #8b8b91;
+  /* border: 2px solid red; */
+  font-family: 'Ubuntu';
+  font-weight: 400;
+  padding-left: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.n-a-permissionPassword {
+  width: 40%;
+  color: #6b6969;
+  font-family: 'Ubuntu';
+  font-weight: 400;
+}
+.n-a-permissionPassword input {
+  height: 1rem;
+  color: #8a4e85;
+  width: 1rem;
+}
+.n-a-buttons{
+height: 4rem;
+width: 90%;
+display: flex;
+justify-content: flex-end;
+/* border: 2px solid red; */
+cursor: pointer;
+gap: 1rem;
+}
+.n-a-Back{
+  height: 2rem;
+  border-radius: 0.3rem;
+  width: 6rem;
+   color: #6b6969;
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.newAccountLoadingArea {
+  height: 6rem;
+  width: 100%;
+   border-top: 2px solid #e7e7e7;
+  /* border: 2px solid rgb(202, 216, 0); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.n-a-loading-dot {
+  height: 1rem;
+  width: 1rem;
+  background-color: #94488cc7;
+  border-radius: 50%;
+}

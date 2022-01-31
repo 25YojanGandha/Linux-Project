@@ -2,7 +2,6 @@ import './App.css';
 import * as React from 'react';
 import { createContext, useState } from 'react';
 import Body from './Component/Body';
-// import { NextUIProvider } from '@nextui-org/react';
 
 export let GlobalData = createContext();
 
@@ -11,6 +10,13 @@ function App() {
   let [dockIconArray, setDockIconArray] = useState(['Browser', 'Clock', 'Terminal', 'Account', 'Appstore', 'Help']);
 
   let [currentApp, setCurrentApp] = useState([]);
+
+  let [accountData, setAccountData] = useState({
+    isNewAccount: false,
+    editOpened: false,
+    passView: false,
+    userName: 'Yojan Gandha',
+  });
 
   let [isBrowser, setBrowser] = useState({
     appOpend: false,
@@ -128,16 +134,15 @@ function App() {
         isMenu,
         setMenu,
 
-        handleDockApp
+        handleDockApp,
+
+        accountData,
+        setAccountData
       }}
     >
-      {/* <NextUIProvider> */}
-        {/* {console.log(<NextUIProvider></NextUIProvider>)} */}
         <div className='App'>
           <Body />
         </div>
-      {/* </NextUIProvider> */}
-
     </GlobalData.Provider>
   );
 }
