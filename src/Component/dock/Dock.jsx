@@ -15,6 +15,10 @@ function Dock() {
     <div id='dockBody'>
       <div className='dock-appRecent-container'>
         {gData.dockIconArray.map((appName)=>{
+          if(!gData['is'+appName].appOpend && !gData['is'+appName].isPermanent){
+            return;
+          }
+
           return  <div
           className={
             gData.currentApp[0] === appName &&

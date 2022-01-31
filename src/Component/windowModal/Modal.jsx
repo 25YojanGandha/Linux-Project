@@ -119,6 +119,7 @@ function Modal(props) {
                 return ele !== props.data.innerData;
               });
               gData.setCurrentApp([...newArr]);
+
             }}
           >
             <IoCloseOutline />
