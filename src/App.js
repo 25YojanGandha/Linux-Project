@@ -260,7 +260,10 @@ function App() {
         isMessage,
         setMessage,
 
-        handleDockApp
+        handleDockApp,
+
+        accountData,
+        setAccountData
       }}
     >
         <div className='App'>
