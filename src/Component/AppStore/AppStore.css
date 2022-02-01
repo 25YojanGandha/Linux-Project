@@ -1,13 +1,146 @@
 .AppStoreBody{
  height: 100%;
  width: 100%;
+ background-color: whitesmoke;
+ display: flex;
+ /* justify-content: center; */
+ align-items: center;
+ flex-direction: column;
+}
+.appBody-banner{
+ margin-top: 0.5rem;
+ height: 26%;
+ width: 98%;
+ border-radius: 0.5rem;
+ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+background-image: url(../../../public/images/banner_1.png);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover; 
+display: flex;
 }
 
-.appBody-banner{
- height: 25%;
- width: 100%;
- background-image: url(../../../public/images/Desktop\ -\ 3.png);
+.accountPic-container{
+ height:100%;
+ padding-left: 1.5rem;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding-right: 1.5rem;
+padding-bottom: 0.9rem;
+align-items: center;
+/* border: 2px solid red; */
+}
+
+.imgContainer{
+ border-radius: 50%;
+ height: 7.5rem;
+ width: 7.5rem;
+ background-image: url(../../../public/images/yojan.jpg);
  background-position: center;
- background-repeat: no-repeat;
  background-size: cover;
+ background-repeat: no-repeat;
+ border: 2px solid #686868;
+box-sizing: border-box;
+box-shadow: 0px 4px 150px 50px rgba(0, 0, 0, 0.25);
+border-radius: 250px;
+}
+
+.textContainer{
+ height: 100%;
+ width: 45%;
+ /* border: 2px solid blue; */
+ display: flex;
+ justify-content: flex-end;
+ flex-direction: column;
+ /* padding-bottom: 1rem; */
+}
+.appStorebuttonContainer{
+ height: 100%;
+ width: calc(100% - 56.5%);
+ /* border: 2px solid yellow; */
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ align-items: center;
+ padding-left: 1rem;
+ padding-right: 1rem;
+ padding-top: 0.5rem;
+ padding-bottom: 0.5rem;
+}
+.appStore-btn-github{
+ height: 2.5rem;
+ width: 7rem;
+ background-color: #42414d;
+ border-radius: 0.3rem;
+ font-family: 'ubuntu';
+ font-family: 1.2rem;
+ color: white;
+ display: flex;
+ justify-content: center;
+ gap: 0.5rem;
+ align-items: center;
+ box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.appStore-btn-linkedln{
+ height: 2.5rem;
+ width: 7rem;
+ background-color: #0077b5;
+ border-radius: 0.3rem;
+ font-family: 'ubuntu';
+ font-family: 1.2rem;
+ color: white;
+ display: flex;
+ justify-content: center;
+ gap: 0.5rem;
+ align-items: center;
+ box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.appStoreBtn-div-container_1{
+ height: 3rem;
+ width: 100%;
+ /* border: 2px solid rgb(185, 226, 0); */
+ display: flex;
+ justify-content: flex-end;
+}
+.appStoreBtn-div-container_1 a img{
+ height: 80%;
+ width: 10rem;
+}
+.appStoreBtn-div-container_2{
+ height: 3rem;
+ width: 100%;
+ /* border: 2px solid rgb(15, 0, 226); */
+  display: flex;
+ justify-content: flex-end;
+cursor: pointer;
+ gap:1rem;
+ align-items: center;
+}
+.appStore-banner-text1{
+ height: 3.7rem;
+ width: 100%;
+ /* border: 2px solid yellow; */
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size:3.1rem;
+letter-spacing: -0.03em;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.appStore-banner-text2{
+ height: 3rem;
+ width: 100%;
+ /* border: 2px solid yellow; */
+font-family: Poppins;
+font-style: normal;
+font-size:1rem;
+letter-spacing: -0.05em;
+color: #82827a;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+display: flex;
+align-items: center;
+gap: 0.3rem;
 }
