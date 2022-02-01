@@ -182,7 +182,7 @@ function App() {
       });
     }
 
-    if(!gData.dockIconArray.includes(currentClikedApp))
+    if(!gData.dockIconArray.includes(currentClikedApp) && currentClikedApp!='Trash')
     gData.dockIconArray = [...gData.dockIconArray, currentClikedApp];
 
     gData.setDockIconArray(gData.dockIconArray);
