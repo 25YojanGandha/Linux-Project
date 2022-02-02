@@ -5,28 +5,7 @@ import './Menu.css';
 
 function Menu() {
   let gData = useContext(GlobalData);
-  let [applicationsArray, setApplicationsArray] = useState([
-    'Browser',
-    'Gallery',
-    'Clock',
-    'Terminal',
-    'Account',
-    'Camera',
-    'Appstore',
-    'Help',
-    'Settings',
-    'Meet',
-    'Notepad',
-    'Chess',
-    'Vscode',
-    'Calender',
-    'Maps',
-    'Hillclimb',
-    'Trash',
-    'Weather',
-    'Music',
-    'Message',
-  ]);
+  
 
   return (
     <div className='menu-main-container'>
@@ -49,9 +28,14 @@ function Menu() {
       </div>
 
       <div className='menu-app-container'>
-        {applicationsArray.map((appName) => {
+        {gData.applicationsArray.map((appName) => {
           return (
-            <div className='app-container-card' onClick={()=>{gData.handleDockApp(appName,gData)}}>
+            <div
+              className='app-container-card'
+              onClick={() => {
+                gData.handleDockApp(appName, gData);
+              }}
+            >
               <img src={`./images/${appName}.png`} alt={appName} />
               <div className='app-text'>{appName}</div>
             </div>
