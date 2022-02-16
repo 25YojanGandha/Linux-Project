@@ -1,146 +1,338 @@
-.AppStoreBody{
- height: 100%;
- width: 100%;
- background-color: whitesmoke;
- display: flex;
- /* justify-content: center; */
- align-items: center;
- flex-direction: column;
-}
-.appBody-banner{
- margin-top: 0.5rem;
- height: 26%;
- width: 98%;
- border-radius: 0.5rem;
- box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-background-image: url(../../../public/images/banner_1.png);
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover; 
-display: flex;
-}
 
-.accountPic-container{
- height:100%;
- padding-left: 1.5rem;
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-padding-right: 1.5rem;
-padding-bottom: 0.9rem;
-align-items: center;
-/* border: 2px solid red; */
+::-webkit-scrollbar{
+    width: 0;
 }
-
-.imgContainer{
- border-radius: 50%;
- height: 7.5rem;
- width: 7.5rem;
- background-image: url(../../../public/images/yojan.jpg);
- background-position: center;
- background-size: cover;
- background-repeat: no-repeat;
- border: 2px solid #686868;
-box-sizing: border-box;
-box-shadow: 0px 4px 150px 50px rgba(0, 0, 0, 0.25);
-border-radius: 250px;
-}
-
-.textContainer{
- height: 100%;
- width: 45%;
- /* border: 2px solid blue; */
- display: flex;
- justify-content: flex-end;
- flex-direction: column;
- /* padding-bottom: 1rem; */
-}
-.appStorebuttonContainer{
- height: 100%;
- width: calc(100% - 56.5%);
- /* border: 2px solid yellow; */
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- align-items: center;
- padding-left: 1rem;
- padding-right: 1rem;
- padding-top: 0.5rem;
- padding-bottom: 0.5rem;
-}
-.appStore-btn-github{
- height: 2.5rem;
- width: 7rem;
- background-color: #42414d;
- border-radius: 0.3rem;
- font-family: 'ubuntu';
- font-family: 1.2rem;
- color: white;
- display: flex;
- justify-content: center;
- gap: 0.5rem;
- align-items: center;
- box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-}
-.appStore-btn-linkedln{
- height: 2.5rem;
- width: 7rem;
- background-color: #0077b5;
- border-radius: 0.3rem;
- font-family: 'ubuntu';
- font-family: 1.2rem;
- color: white;
- display: flex;
- justify-content: center;
- gap: 0.5rem;
- align-items: center;
- box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
-}
-.appStoreBtn-div-container_1{
- height: 3rem;
- width: 100%;
- /* border: 2px solid rgb(185, 226, 0); */
- display: flex;
- justify-content: flex-end;
-}
-.appStoreBtn-div-container_1 a img{
- height: 80%;
- width: 10rem;
-}
-.appStoreBtn-div-container_2{
- height: 3rem;
- width: 100%;
- /* border: 2px solid rgb(15, 0, 226); */
+.AppStoreBody {
+  height: 100%;
+  width: 100%;
+  background-color:#f2f1ef;
   display: flex;
- justify-content: flex-end;
-cursor: pointer;
- gap:1rem;
- align-items: center;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+  
 }
-.appStore-banner-text1{
- height: 3.7rem;
+.appBody-banner {
+  height: 26%;
+  width: 100%;
+  border-radius: 0rem;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background-image: url(../../../public/images/banner_1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+.accountPic-container {
+  height: 100%;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+  padding-bottom: 0.9rem;
+  align-items: center;
+  /* border: 2px solid red; */
+}
+
+.imgContainer {
+  border-radius: 50%;
+  height: 7.5rem;
+  width: 7.5rem;
+  background-image: url(../../../public/images/arpit.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 2px solid #686868;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 150px 50px rgba(0, 0, 0, 0.25);
+  border-radius: 250px;
+}
+
+.textContainer {
+  height: 100%;
+  width: 45%;
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  /* padding-bottom: 1rem; */
+}
+.appStorebuttonContainer {
+  height: 100%;
+  width: calc(100% - 56.5%);
+  /* border: 2px solid yellow; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.appStore-btn-github {
+  height: 2.5rem;
+  width: 7rem;
+  background-color: #42414d;
+  border-radius: 0.3rem;
+  font-family: 'ubuntu';
+  font-family: 1.2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.appStore-btn-linkedln {
+  height: 2.5rem;
+  width: 7rem;
+  background-color: #0077b5;
+  border-radius: 0.3rem;
+  font-family: 'ubuntu';
+  font-family: 1.2rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.appStoreBtn-div-container_1 {
+  height: 3rem;
+  width: 100%;
+  /* border: 2px solid rgb(185, 226, 0); */
+  display: flex;
+  justify-content: flex-end;
+}
+.appStoreBtn-div-container_1 a img {
+  height: 80%;
+  width: 10rem;
+}
+.appStoreBtn-div-container_2 {
+  height: 3rem;
+  width: 100%;
+  /* border: 2px solid rgb(15, 0, 226); */
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  gap: 1rem;
+  align-items: center;
+}
+.appStore-banner-text1 {
+  height: 3.7rem;
+  width: 100%;
+  /* border: 2px solid yellow; */
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3.1rem;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.appStore-banner-text2 {
+  height: 3rem;
+  width: 100%;
+  /* border: 2px solid yellow; */
+  font-family: Poppins;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: -0.05em;
+  color: #82827a;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.appStore-gridContainer {
+  height: calc(100% - 26%);
+  width: 100%;
+  /* border: 2px solid red; */
+  padding: 1rem;
+}
+.aapStore-categories {
+  height: 10rem;
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.appStore-categories-headText {
+  height: 2rem;
+  width: 100%;
+  font-family: 'ubuntu';
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #5e6158;
+  /* border: 2px solid blue; */
+  display: flex;
+  align-items: center;
+}
+
+.appStore-categories-boxContainer {
+  height: calc(100% - 3rem);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+  /* border: 2px solid yellow; */
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+.appStore-categories-inner-boxContainer {
+  height: auto;
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  /* border: 2px solid blue; */
+}
+
+.appStore-categories-innerBox {
+  overflow: hidden;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  width: 32%;
+  background-color: #fbfbfb;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
+    rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+.appStore-categories-iconAndText {
+  height: 2.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.appStore-categories-colorBox{
+  height: 0.8rem;
+  width: 100%;
+}
+.musicAppStore{
+  background-color: #334f6b;
+}
+.newsComunicationAppStore{
+  background-color: #8399b1;
+}
+.productivityAppStore{
+  background-color: #802624;
+}
+.gamesAppStore{
+  background-color: #a49346;
+}
+.graphicsPhotographyAppStore{
+  background-color: #6f5873;
+}
+.developerToolsAppStore{
+  background-color: #b7b8b2;
+}
+
+.appStore-categories-boxicon {
+  height: 100%;
+  width: 2rem;
+  color: #91908c;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  align-items: center;
+}
+.appStore-categories-boxtext {
+  height: 100%;
+  width: calc(100% - 2rem);
+  /* border: 2px solid red; */
+  padding-left: 0.2rem;
+  color: #4b4b50;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+  align-items: center;
+  font-family: 'ubuntu';
+  display: flex;
+  align-items: center;
+}
+
+.appStore-categories-line{
+margin-top: 0.5rem;
+margin-bottom: 1rem;
+ height: 1.5px ;
  width: 100%;
- /* border: 2px solid yellow; */
-font-family: Poppins;
-font-style: normal;
-font-weight: bold;
-font-size:3.1rem;
-letter-spacing: -0.03em;
-color: #FFFFFF;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+ background-color: #e9e8e6;
+ box-shadow: #dad8d5 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 
 }
-.appStore-banner-text2{
- height: 3rem;
- width: 100%;
- /* border: 2px solid yellow; */
-font-family: Poppins;
-font-style: normal;
-font-size:1rem;
-letter-spacing: -0.05em;
-color: #82827a;
-text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-display: flex;
-align-items: center;
-gap: 0.3rem;
+
+.appStore_AppDivContainer{
+  width: 100%;
+  /* border: 2px solid red; */
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+ cursor: pointer;
+}
+.workAsMargin{
+  height: 1rem;
+}
+.appStore_app_innerBox{
+  height: 88%;
+  width: 10rem;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+   background-color: #fbfbfb;
+}
+.appStoreApp_icon{
+  height: 4rem;
+  width: 100%;
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.appStoreApp_icon img{
+  height: 4rem;
+  width: 4rem;
+}
+.appStoreApp_text{
+  height: 1rem;
+  width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid rgb(220, 220, 220); */
+  font-family: 'ubuntu';
+  color: #555555;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.appStoreApp_star{
+  height: 1.5rem;
+  width: 100%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid rgb(220, 220, 220); */
+  font-family: 'ubuntu';
+  color: #555555;
+  font-weight: 500;
+  gap: 0.3rem;
+  font-size: 0.8rem;
 }

@@ -8,6 +8,51 @@ export let GlobalData = createContext();
 function App() {
 
   let [dockIconArray, setDockIconArray] = useState(['Browser', 'Terminal', 'Account', 'Appstore', 'Help']);
+  let [applicationsArray, setApplicationsArray] = useState([
+    'Browser',
+    'Gallery',
+    'Clock',
+    'Terminal',
+    'Account',
+    'Camera',
+    'Appstore',
+    'Help',
+    'Settings',
+    'Meet',
+    'Notepad',
+    'Chess',
+    'Vscode',
+    'Calender',
+    'Maps',
+    'Hillclimb',
+    'Trash',
+    'Weather',
+    'Music',
+    'Message',
+  ]);
+  let [applicationsAppStoreArray, setApplicationsAppStoreArray] = useState([
+    'Vscode',
+    'Browser',
+    'Meet',
+    'Camera',
+    'Chess',
+    'Clock',
+    'Terminal',
+    'Account',
+    'Camera',
+    'Gallery',
+    'Appstore',
+    'Help',
+    'Settings',
+    'Notepad',
+    'Calender',
+    'Maps',
+    'Hillclimb',
+    'Trash',
+    'Weather',
+    'Music',
+    'Message',
+  ]);
 
   let [currentApp, setCurrentApp] = useState([]);
 
@@ -263,12 +308,18 @@ function App() {
         handleDockApp,
 
         accountData,
-        setAccountData
+        setAccountData,
+
+        applicationsArray,
+        setApplicationsArray,
+
+        applicationsAppStoreArray,
+        setApplicationsAppStoreArray,
       }}
     >
-        <div className='App'>
-          <Body />
-        </div>
+      <div className='App'>
+        <Body />
+      </div>
     </GlobalData.Provider>
   );
 }
