@@ -26,7 +26,7 @@ function AppStore() {
               <div className='imgContainer'></div>
             </div>
             <div className='textContainer'>
-              <div className='appStore-banner-text1'>Arpit Maurya</div>
+              <div className='appStore-banner-text1'>Yojan Gandha</div>
               <div className='appStore-banner-text2'>
                 <BsStars />  MERN / MEAN Full Stack Developer
               </div>

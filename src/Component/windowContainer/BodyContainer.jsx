@@ -7,6 +7,7 @@ import Map from '../map/Map';
 import Account from '../Account_Component/Account';
 import AppStore from '../AppStore/AppStore';
 import Meet from '../meet/Meet';
+import Terminal from '../Terminal/Terminal';
 
 function BodyContainer() {
   let gData = useContext(GlobalData);
@@ -19,7 +20,7 @@ function BodyContainer() {
         ''
       )}
       {gData.isTerminal.appOpend ? (
-        <Modal data={{ innerData: 'Terminal' }} />
+        <Modal data={{ innerData: 'Terminal', component:<Terminal/>}} />
       ) : (
         ''
       )}
@@ -49,7 +50,11 @@ function BodyContainer() {
       ) : (
         ''
       )}
-      {gData.isMeet.appOpend ? <Modal data={{ innerData: 'Meet' , component: <Meet />}} /> : ''}
+      {gData.isMeet.appOpend ? (
+        <Modal data={{ innerData: 'Meet', component: <Meet /> }} />
+      ) : (
+        ''
+      )}
       {gData.isNotepad.appOpend ? (
         <Modal data={{ innerData: 'Notepad' }} />
       ) : (
@@ -58,7 +63,7 @@ function BodyContainer() {
       {gData.isChess.appOpend ? <Modal data={{ innerData: 'Chess' }} /> : ''}
       {gData.isVscode.appOpend ? <Modal data={{ innerData: 'Vscode' }} /> : ''}
       {gData.isCalender.appOpend ? (
-        <Modal data={{ innerData: 'Calender'}} />
+        <Modal data={{ innerData: 'Calender' }} />
       ) : (
         ''
       )}
@@ -73,7 +78,7 @@ function BodyContainer() {
         ''
       )}
       {gData.isWeather.appOpend ? (
-        <Modal data={{ innerData: 'Weather'}} />
+        <Modal data={{ innerData: 'Weather' }} />
       ) : (
         ''
       )}
