@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # backend
-/backend/.env
+keys.env
 /backend/node_modules
-/backend/Models
 

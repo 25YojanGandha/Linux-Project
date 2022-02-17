@@ -3,7 +3,6 @@ const userRouter = express.Router();
 const {getUser,getAllUser,updateUser,deleteUser}=require('../Controller/userController');
 const {signup,login,isAuthorised,protectRoute,forgetpassword,resetpassword,logout}=require('../Controller/authController');
 
-
 // Login Route
 userRouter
 .route('/login')
@@ -30,7 +29,8 @@ userRouter
 .post(resetpassword)
 
 // UserProfile Route
-userRouter.route('/:id')
+userRouter
+.route('/:id')
 .patch(updateUser)
 .delete(deleteUser)
 
