@@ -8,6 +8,8 @@ import Account from '../Account_Component/Account';
 import AppStore from '../AppStore/AppStore';
 import Meet from '../meet/Meet';
 import Weather from '../weather/Weather';
+import Terminal from '../Terminal/Terminal';
+
 
 function BodyContainer() {
   let gData = useContext(GlobalData);
@@ -20,7 +22,7 @@ function BodyContainer() {
         ''
       )}
       {gData.isTerminal.appOpend ? (
-        <Modal data={{ innerData: 'Terminal', component:<Terminal/>}} />
+        <Modal data={{ innerData: 'Terminal', component: <Terminal /> }} />
       ) : (
         ''
       )}
@@ -78,7 +80,7 @@ function BodyContainer() {
         ''
       )}
       {gData.isWeather.appOpend ? (
-        <Modal data={{ innerData: 'Weather',component: <Weather />}} />
+        <Modal data={{ innerData: 'Weather', component: <Weather /> }} />
       ) : (
         ''
       )}
