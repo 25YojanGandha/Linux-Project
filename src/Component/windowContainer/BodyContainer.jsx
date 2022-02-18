@@ -7,7 +7,7 @@ import Map from '../map/Map';
 import Account from '../Account_Component/Account';
 import AppStore from '../AppStore/AppStore';
 import Meet from '../meet/Meet';
-import Terminal from '../Terminal/Terminal';
+import Weather from '../weather/Weather';
 
 function BodyContainer() {
   let gData = useContext(GlobalData);
@@ -78,7 +78,7 @@ function BodyContainer() {
         ''
       )}
       {gData.isWeather.appOpend ? (
-        <Modal data={{ innerData: 'Weather' }} />
+        <Modal data={{ innerData: 'Weather',component: <Weather />}} />
       ) : (
         ''
       )}
