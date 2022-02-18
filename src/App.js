@@ -208,23 +208,23 @@ function App() {
 
     if (gData['is' + currentClikedApp].appOpend && gData.currentApp[0] === currentClikedApp) {
       console.log(currentClikedApp);
-      // gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
-      // gData['set' + currentClikedApp]({
-      //   ...gData['is' + currentClikedApp],
-      //   minimize: true,
-      // });
-      // let newArr = gData.currentApp.filter((ele) => {
-      //   return ele !== currentClikedApp;
-      // });
-      // gData.setCurrentApp([...newArr]);
+      gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        minimize: true,
+      });
+      let newArr = gData.currentApp.filter((ele) => {
+        return ele !== currentClikedApp;
+      });
+      gData.setCurrentApp([...newArr]);
     }
 
     if (gData['is' + currentClikedApp].minimize) {
-      // gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
-      // gData['set' + currentClikedApp]({
-      //   ...gData['is' + currentClikedApp],
-      //   minimize: false,
-      // });
+      gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
+      gData['set' + currentClikedApp]({
+        ...gData['is' + currentClikedApp],
+        minimize: false,
+      });
     }
 
     if(!gData.dockIconArray.includes(currentClikedApp) && currentClikedApp!=='Trash')
