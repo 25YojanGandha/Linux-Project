@@ -1,15 +1,21 @@
 require('dotenv').config({ path: '../keys.env' });
 const mongoose=require('mongoose');
+const bodyParser = require('body-parser');
+const path = require('path');
 const emailValidator=require('email-validator');
 const crypto=require('crypto');
+const multer = require('multer');
 
 const dbLink = process.env.dbLink;
+const gfs;
 console.log(dbLink);
 
 // Stablishes The Connection Between MongoDB & Application
 mongoose.connect(dbLink)
 .then(function(db){
   console.log(db);
+  gfs=Grid(db,mongoose.mongo);
+  gfs.collection('uploads');
   console.log('user db connected');
 })
 .catch(function(err){
@@ -24,6 +30,10 @@ const userSchema=mongoose.Schema({
         validate:function(){
             return emailValidator.validate(this.email);
         }
+    },
+    profileImage:{
+        type:String,
+        // default:''
     },
     password:{type:String,required:true,minLength:8},
     confirmPassword:{type:String,required:true,minLength:8,
@@ -61,11 +71,13 @@ module.exports=userModel;
 
 
 // async function createUser(){
-//     let user={
-//         name: "Yojan",
-//         password: '123456789',
-//         confirmPassword: '123456789'
-//     }
+// let user={
+//     "name": "Yojan",
+//     "computerName": "YG-DESKTOP",
+//     "email": "yojangandha1806@gmail.com",
+//     "password": "23456789",
+//     "confirmPassword": "123456789"
+// }
 
 //     let data = await userModel.create(user);
 //     console.log(data);
