@@ -50,10 +50,10 @@ function SingleAppData(props) {
            </div>
          </div>
          <div className='singleData_Container_buttons'>
-           <div className='button_install_or_uninstall singleData_install_color'>
-             Install
+           <div className='button_install_or_uninstall singleData_install_color' >
+             {propsData.singleAppData.isInstalled?"Installed":"Install"}
            </div>
-           <div className='button_remove  removeBtnSingleData'>Remove</div>
+           {propsData.singleAppData.isInstalled?<div className='button_remove  removeBtnSingleData'>Remove</div>:""}
          </div>
 
          <div className='appSingleData_appImgContainer'>

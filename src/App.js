@@ -25,14 +25,14 @@ function App() {
     'Settings',
     'Meet',
     'Notepad',
-    'Chess',
+    // 'Chess',
     'Vscode',
-    'Calender',
+    // 'Calender',
     'Maps',
     'Hillclimb',
     'Trash',
-    'Weather',
-    'Music',
+    // 'Weather',
+    // 'Music',
     'Message',
   ]);
   let [applicationsAppStoreArray, setApplicationsAppStoreArray] = useState([

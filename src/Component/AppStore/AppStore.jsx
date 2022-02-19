@@ -17,6 +17,11 @@ import SingleAppData from './SingleAppData';
 function AppStore() {
   let gData = useContext(GlobalData)
   let [singleAppData,setSingleAppData] = useState({appClicked:false,appName:''})
+  let checkInstalled=(appName)=>{
+    // return 
+    console.log(appName);
+    return gData.applicationsArray.includes(appName);
+  }
   return (
     <>
       {!singleAppData.appClicked ? (
@@ -140,6 +145,7 @@ function AppStore() {
                         ...singleAppData,
                         appClicked: true,
                         appName: appName,
+                        isInstalled: checkInstalled(appName)
                       });
                     }}
                   >

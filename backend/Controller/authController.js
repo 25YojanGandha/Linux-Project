@@ -1,6 +1,8 @@
 const express=require('express');
 const userModel=require('../Models/userModel');
 
+
+
 module.exports.signup=async function signup(req,res){
     try{
         let userSignUpObject=req.body;
