@@ -1,41 +1,42 @@
-import react from 'react';
-import { useContext, createRef, useState } from 'react';
+import { useContext, createRef, useState, useEffect } from 'react';
 import { GlobalData } from '../../App';
 
 import './Terminal.css';
 function Terminal() {
   let gData = useContext(GlobalData);
   let [commandArr, setCommandArr] = useState([]);
- let [dummieState, setDummieState] = useState(false);
-  let [commandAllArr, setCommandAllArr] = useState(['clear','meet','appstore']);
+  let [dummieState, setDummieState] = useState(false);
+  let [currentCommandIndex, setCurrentCommandIndex] = useState(-1);
+  let [commandAllArr] = useState(['exit', 'clear', 'meet', 'maps', 'appstore']);
   let terminalInput = createRef();
- let checkCommand = (command) => {
-  if (commandAllArr.includes(command)) {
-   if (command.toLowerCase() === 'clear') {
-    setCommandArr([])
-   }
-   if (command.toLowerCase() === 'meet') {
-     setTimeout(() => {
-      console.log(gData);
-     gData.handleDockApp('Meet', gData);
-    },1000)
-   }
-   if (command.toLowerCase() === 'appstore') {
-    setTimeout(() => {
-     gData.handleDockApp('Appstore', gData);
-    },1000)
-   }
-    
-    return true;
-  } else {
-    return false;
-  }
-   
+
+  let executeCommand = (command) => {
+    console.log(command);
+    if (command === 'clear') {
+      setCommandArr([]);
+      return;
+    }
+    if (command === 'exit') {
+      gData.isTerminal.windowModal.current.querySelector('.closeSpan').click();
+      return;
+    }
+    if (
+      gData.applicationsArray.includes(
+        command[0].toUpperCase() + command.slice(1)
+      )
+    ) {
+      let appName = command[0].toUpperCase() + command.slice(1);
+      gData.handleDockApp(appName, gData);
+      setTimeout(() => {
+        gData.handleDockApp(appName, gData);
+      }, 500);
+      return;
+    }
   };
   return (
     <>
-    <div className='terminalBody'>
-        {[...commandArr, { command:''}].map((e) => {
+      <div className='terminalBody'>
+        {[...commandArr, { command: '', onlyForInputCheck: true }].map((e) => {
           return (
             <>
               <div className='terminalLine'>
@@ -47,36 +48,40 @@ function Terminal() {
                   <label className='terminal_Tilde_operato'>~</label>
                   <label className='terminal_Dollar'>$</label>
                 </div>
-                {e.command ? (
-                  <input
-                    // ref={terminalInput}
-                    className='terminal_editable_command'
-                    readOnly
-                    value={e.command}
-                  ></input>
+                {!e.onlyForInputCheck || e.command ? (
+                  <div className='terminal_inputCommandDisplay'>
+                    {e.command}
+                  </div>
                 ) : (
                   <input
                     ref={terminalInput}
                     autoFocus
-                className='terminal_editable_command'
+                    className='terminal_editable_command'
                     onKeyUp={(e) => {
-                     if (e.key === 'Enter') {
-                      //  console.log(terminalInput);
+                      if (e.key === 'ArrowUp') {
+                        console.log(commandArr[currentCommandIndex]);
+                      }
+                      if (e.key === 'Enter') {
+                        // console.log(currentCommandIndex);
+                        let inputValue = terminalInput.current.value.trim();
                         commandArr.push({
-                          command: terminalInput.current.value,
+                          command: inputValue,
                         });
-
                         setDummieState(!dummieState);
+                        setCurrentCommandIndex(commandArr.length - 1);
+                        if (commandAllArr.includes(inputValue.toLowerCase())) {
+                          executeCommand(inputValue.toLowerCase());
+                        }
                       }
                     }}
                   ></input>
                 )}
               </div>
-              {checkCommand(e.command.trim()) || e.command === '' ? (
+              {commandAllArr.includes(e.command.toLowerCase()) ||
+              e.command === '' ? (
                 ''
               ) : (
                 <div className='terminalCommandGuideLine'>
-                  {console.log('a')}
                   <div className='terminal_guide_line1'>
                     Command '{e.command}' not found or not yet implemented
                     <br />

@@ -61,10 +61,8 @@ class MapApp extends React.Component {
                  draggable: true,
                  title: "Marker title",
                  onClick: e => {
-                     console.log("clicked ");
                  },
                  onDragend: e => {
-                     console.log("dragged");
                  }
              }
          ]}

@@ -6,8 +6,13 @@ import Body from './Component/Body';
 export let GlobalData = createContext();
 
 function App() {
-
-  let [dockIconArray, setDockIconArray] = useState(['Browser', 'Terminal', 'Account', 'Appstore', 'Help']);
+  let [dockIconArray, setDockIconArray] = useState([
+    'Browser',
+    'Terminal',
+    'Account',
+    'Appstore',
+    'Help',
+  ]);
   let [applicationsArray, setApplicationsArray] = useState([
     'Browser',
     'Gallery',
@@ -67,125 +72,125 @@ function App() {
     appOpend: false,
     minimize: false,
     isPermanent: true,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isClock, setClock] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isTerminal, setTerminal] = useState({
     appOpend: false,
     minimize: false,
     isPermanent: true,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isAccount, setAccount] = useState({
     appOpend: false,
     minimize: false,
     isPermanent: true,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isAppstore, setAppstore] = useState({
     appOpend: false,
     minimize: false,
     isPermanent: true,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isHelp, setHelp] = useState({
     appOpend: false,
     minimize: false,
     isPermanent: true,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isTrash, setTrash] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isMessage, setMessage] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isMusic, setMusic] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isWeather, setWeather] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isHillclimb, setHillclimb] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isMaps, setMaps] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isCalender, setCalender] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isVscode, setVscode] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isChess, setChess] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isNotepad, setNotepad] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isMeet, setMeet] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isSettings, setSettings] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isCamera, setCamera] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isGallery, setGallery] = useState({
     appOpend: false,
     minimize: false,
-    windowModal: ''
+    windowModal: '',
   });
 
   let [isMenu, setMenu] = useState(false);
@@ -206,8 +211,12 @@ function App() {
       });
     }
 
-    if (gData['is' + currentClikedApp].appOpend && gData.currentApp[0] === currentClikedApp) {
-      console.log(currentClikedApp);
+
+    if (
+      gData['is' + currentClikedApp].appOpend &&
+      gData.currentApp[0] === currentClikedApp &&
+      gData['is' + currentClikedApp].windowModal.current
+    ) {
       gData['is' + currentClikedApp].windowModal.current.style.display = 'none';
       gData['set' + currentClikedApp]({
         ...gData['is' + currentClikedApp],
@@ -219,17 +228,21 @@ function App() {
       gData.setCurrentApp([...newArr]);
     }
 
-    if (gData['is' + currentClikedApp].minimize) {
+    if (
+      gData['is' + currentClikedApp].minimize &&
+      gData['is' + currentClikedApp].windowModal.current
+    ) {
       gData['is' + currentClikedApp].windowModal.current.style.display = 'flex';
       gData['set' + currentClikedApp]({
         ...gData['is' + currentClikedApp],
         minimize: false,
       });
     }
-
-    if(!gData.dockIconArray.includes(currentClikedApp) && currentClikedApp!=='Trash')
-    gData.dockIconArray = [...gData.dockIconArray, currentClikedApp];
-
+    if (
+      !gData.dockIconArray.includes(currentClikedApp) &&
+      currentClikedApp !== 'Trash'
+    )
+      gData.dockIconArray = [...gData.dockIconArray, currentClikedApp];
     gData.setDockIconArray(gData.dockIconArray);
   };
 

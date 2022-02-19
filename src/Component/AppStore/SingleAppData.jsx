@@ -16,7 +16,6 @@ function SingleAppData(props) {
                appClicked: false,
                appName: '',
              });
-             console.log('a');
            }}
          >
            <IoIosArrowBack />

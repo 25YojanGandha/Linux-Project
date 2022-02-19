@@ -16,8 +16,8 @@
 .preTerminal-text-account {
   height: 100%;
   width: 13rem;
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 .terminal_AccountName {
   font-family: 'Ubuntu';
@@ -34,42 +34,54 @@ align-items: center;
   margin-left: 0.2rem;
 }
 .terminal_Tilde_operato {
- font-family: 'Ubuntu';
+  font-family: 'Ubuntu';
   font-size: 1rem;
   font-weight: 500;
   margin-right: 0.2rem;
   color: #647faa;
 }
 .terminal_Dollar {
- font-family: 'Ubuntu';
+  font-family: 'Ubuntu';
   font-size: 1rem;
   font-weight: 500;
   color: #ffffff;
 }
 
-.terminal_editable_command{
-width: 100%;
-width: calc(100% - 13rem);
-outline: none;
-background-color: transparent;
-border: none;
- font-family: 'Ubuntu';
+.terminal_editable_command {
+  width: 100%;
+  width: calc(100% - 13rem);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  font-family: 'Ubuntu';
   font-size: 1rem;
   font-weight: 500;
   color: #ffffff;
   padding-left: 0.3rem;
-  /* border: 2px solid red; */
 }
-.terminalCommandGuideLine{
- /* height: 8rem; */
- margin-top: 0.2rem;
- margin-bottom: 0.2rem;
- width: 100%;
- /* border: 2px solid white; */
+.terminal_inputCommandDisplay {
+  width: 100%;
+  width: calc(100% - 13rem);
+  outline: none;
+  background-color: transparent;
+  font-family: 'Ubuntu';
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 0.3rem;
+  display: flex;
+  align-items: center;
 }
-.terminal_guide_line1{
- /* height: 2rem; */
- width: 100%;
+.terminalCommandGuideLine {
+  /* height: 8rem; */
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  width: 100%;
+  /* border: 2px solid white; */
+}
+.terminal_guide_line1 {
+  /* height: 2rem; */
+  width: 100%;
   font-family: 'Ubuntu';
   font-size: 1rem;
   font-weight: 400;
@@ -77,19 +89,19 @@ border: none;
   padding-left: 0.3rem;
   line-height: 1.4rem;
 }
-.terminal_command_helpSection{
- width: 40rem;
-display: flex;
+.terminal_command_helpSection {
+  width: 40rem;
+  display: flex;
 }
-.terminal_command_name{
- height: 100%;
- width: 10rem;
+.terminal_command_name {
+  height: 100%;
+  width: 10rem;
 }
-.terminal_command_Info{
- width: calc(100% - 10rem);
+.terminal_command_Info {
+  width: calc(100% - 10rem);
 }
-.terminal_inner_command_line{
- width: 100%;
+.terminal_inner_command_line {
+  width: 100%;
   font-family: 'Ubuntu';
   font-size: 1rem;
   font-weight: 400;

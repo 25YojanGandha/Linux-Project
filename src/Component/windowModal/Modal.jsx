@@ -59,7 +59,6 @@ function Modal(props) {
           <span
             className='fullscreenSpan'
             onClick={() => {
-              console.log(cstate);
               if (cstate === 0) {
                 setState(2);
                 modalContainer.current.style.height = '100%';

@@ -41,7 +41,6 @@ function Meet() {
 
         api = new window.JitsiMeetExternalAPI(domain, options);
         setApi(api);
-        // console.log(api);
 
         api.executeCommand('subject', 'Project');
 
@@ -49,8 +48,6 @@ function Meet() {
             livestreamData = {
                 livestreamUrl: 'https://meet.jit.si/'+room
             }
-
-            console.log("-----",livestreamData.livestreamUrl)
         })
 
     }
