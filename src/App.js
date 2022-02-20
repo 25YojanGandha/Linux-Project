@@ -29,7 +29,7 @@ function App() {
     'Vscode',
     // 'Calender',
     'Maps',
-    'Hillclimb',
+    // 'Hillclimb',
     'Trash',
     // 'Weather',
     // 'Music',

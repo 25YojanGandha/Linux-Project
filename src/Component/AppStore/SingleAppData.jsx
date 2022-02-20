@@ -1,9 +1,31 @@
 import './SingleAppStore.css'
+import { GlobalData } from '../../App';
+import { useContext} from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { BsStarFill } from 'react-icons/bs';
 import { BsStarHalf } from 'react-icons/bs';
+
 function SingleAppData(props) {
+ let gData = useContext(GlobalData);
  let propsData = props.data;
+
+ let handleInstallApp=(appData,golabInfo)=>{
+   
+  if(!appData.isInstalled){
+    propsData.setSingleAppData({...propsData,isInstalled: true});
+    let newApplicatioArray=[...golabInfo.applicationsArray, appData.appName];
+    golabInfo.setApplicationsArray(newApplicatioArray);
+  }
+ }
+
+ let handleRemoveApp=(appData,golabInfo)=>{
+    propsData.setSingleAppData({...propsData,isInstalled: false});
+    let newApplicatioArray=golabInfo.applicationsArray.filter(function(value){ 
+      return appData.appName!=value;
+    });
+    golabInfo.setApplicationsArray(newApplicatioArray);
+ }
+ 
  return (
    <>
      <div className='singleAppBody'>
@@ -50,10 +72,10 @@ function SingleAppData(props) {
            </div>
          </div>
          <div className='singleData_Container_buttons'>
-           <div className='button_install_or_uninstall singleData_install_color' >
+           <div className='button_install_or_uninstall singleData_install_color' onClick={()=>{handleInstallApp(propsData.singleAppData,gData)}}>
              {propsData.singleAppData.isInstalled?"Installed":"Install"}
            </div>
-           {propsData.singleAppData.isInstalled?<div className='button_remove  removeBtnSingleData'>Remove</div>:""}
+           {propsData.singleAppData.isInstalled?<div className='button_remove  removeBtnSingleData' onClick={()=>{handleRemoveApp(propsData.singleAppData,gData)}}>Remove</div>:""}
          </div>
 
          <div className='appSingleData_appImgContainer'>
