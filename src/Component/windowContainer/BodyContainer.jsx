@@ -9,6 +9,7 @@ import AppStore from '../AppStore/AppStore';
 import Meet from '../meet/Meet';
 import Weather from '../weather/Weather';
 import Terminal from '../Terminal/Terminal';
+import Vscode from '../vscode/Vscode';
 
 
 function BodyContainer() {
@@ -63,7 +64,7 @@ function BodyContainer() {
         ''
       )}
       {gData.isChess.appOpend ? <Modal data={{ innerData: 'Chess' }} /> : ''}
-      {gData.isVscode.appOpend ? <Modal data={{ innerData: 'Vscode' }} /> : ''}
+      {gData.isVscode.appOpend ? <Modal data={{ innerData: 'Vscode',component: <Vscode /> }} /> : ''}
       {gData.isCalender.appOpend ? (
         <Modal data={{ innerData: 'Calender' }} />
       ) : (
